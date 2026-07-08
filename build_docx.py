@@ -18,17 +18,17 @@ sec = doc.sections[0]
 sec.page_height = Cm(29.7)
 sec.page_width = Cm(21.0)
 for m in ("top_margin", "bottom_margin", "left_margin", "right_margin"):
-    setattr(sec, m, Cm(1.0))
+    setattr(sec, m, Cm(0.9))
 
 normal = doc.styles["Normal"]
 normal.font.name = "Microsoft YaHei"
-normal.font.size = Pt(9)
+normal.font.size = Pt(8.5)
 rpr = normal.element.get_or_add_rPr()
 rf = rpr.get_or_add_rFonts()
 rf.set(qn("w:eastAsia"), "微软雅黑")
 
 
-def para(text, size=9, after=1.5, before=0, line=1.0, base_bold=False,
+def para(text, size=8.5, after=1.5, before=0, line=1.0, base_bold=False,
          color=INK, align=None, indent=None):
     p = doc.add_paragraph()
     pf = p.paragraph_format
@@ -50,10 +50,10 @@ def para(text, size=9, after=1.5, before=0, line=1.0, base_bold=False,
 
 
 def heading(text):
-    return para(text, size=10, before=3, after=1.2, base_bold=True, color=GREEN)
+    return para(text, size=9.5, before=3, after=1.2, base_bold=True, color=GREEN)
 
 
-def bullet(text, size=9, after=0.8, color=INK):
+def bullet(text, size=8.5, after=0.8, color=INK):
     return para("• " + text, size=size, after=after, indent=0.4, color=color)
 
 
@@ -79,7 +79,7 @@ para("陪训 PetCoach · AI 宠物行为训练教练", size=13.5, after=0.5, bas
 para("方向：宠物 AI　｜　一句话：免费训狗教程铺天盖地，但新手养狗人常在见效前就放弃。"
      "PetCoach 用 AI 把口语描述转成**行为诊断 → 严重度分级 → 分周训练计划 → 每日任务**，"
      "并以打卡 + 规则化次日提示演示“陪主人坚持”的最小闭环——**我们卖的不是知识，是坚持到见效**。",
-     size=9, after=1.5, align=WD_ALIGN_PARAGRAPH.CENTER, color=GREY)
+     size=8.5, after=1.5, align=WD_ALIGN_PARAGRAPH.CENTER, color=GREY)
 
 # ================= ① =================
 heading("① 机会判断")
@@ -148,12 +148,12 @@ bullet("**资源投入**：个人时间 4–6h/天、AI API 约 ¥数百、Verce
 p = doc.add_paragraph()
 p.paragraph_format.space_before = Pt(4)
 p.paragraph_format.space_after = Pt(0)
-r = p.add_run("在线 Demo："); r.bold = True; r.font.size = Pt(9); r.font.color.rgb = INK
+r = p.add_run("在线 Demo："); r.bold = True; r.font.size = Pt(8.5); r.font.color.rgb = INK
 add_hyperlink(p, "https://pet-coach-mvp.vercel.app/", "pet-coach-mvp.vercel.app")
-r = p.add_run("　｜　代码仓库："); r.bold = True; r.font.size = Pt(9); r.font.color.rgb = INK
+r = p.add_run("　｜　代码仓库："); r.bold = True; r.font.size = Pt(8.5); r.font.color.rgb = INK
 add_hyperlink(p, "https://github.com/bbainthug/pet-coach-mvp", "github.com/bbainthug/pet-coach-mvp")
 r = p.add_run("　｜　本产品定位行为训练辅助，不替代兽医诊疗。")
-r.font.size = Pt(8.5); r.font.color.rgb = GREY
+r.font.size = Pt(8.3); r.font.color.rgb = GREY
 
 doc.save("pet-coach-A4.docx")
 print("saved pet-coach-A4.docx")
