@@ -2,7 +2,7 @@
 
 用 AI 把新手养宠人的口语描述转成行为诊断、训练计划和可执行的每日任务，先跑通“诊断 → 分级 → 计划 → 本地打卡”的陪跑主线。
 
-**在线 Demo**：待补（Vercel 链接）
+**在线 Demo**：[https://pet-coach-mvp.vercel.app/](https://pet-coach-mvp.vercel.app/)
 
 ## Screenshots
 
