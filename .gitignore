@@ -1,0 +1,19 @@
+.next/
+node_modules/
+out/
+dist/
+coverage/
+.env.local
+.env*.local
+.env
+.playwright-cli/
+.claude/
+*.log
+.DS_Store
+
+# Internal planning / review notes
+FIX-SPEC-for-codex.md
+UI-ENHANCE-for-codex.md
+复审提示词.md
+录屏脚本.md
+A4-提交正文-v2.md
